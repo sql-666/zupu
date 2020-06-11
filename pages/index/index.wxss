@@ -1,0 +1,58 @@
+.title {
+  padding: 20rpx 30rpx;
+  font-size: 12pt;
+  color: #353535;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title view::after {
+  display: inline-block;
+  content: '';
+  width: 18rpx;
+  height: 18rpx;
+  border-top: 3rpx solid #353535;
+  border-right: 3rpx solid #353535;
+  transform: rotate(45deg);
+}
+
+.des text{
+  font-size: 25rpx;
+}
+
+.des text:first-child{
+  color: #616161;
+}
+
+.des{
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+text{
+  color: #424242
+}
+
+.ye-item{
+  padding:20rpx 30rpx;
+  border-bottom:1rpx solid #eee;
+}
+
+.edit-btn{
+  width: 100%;
+  text-align: center;
+  height: 80rpx;
+  background-color: #2E7D32;
+  position: fixed;
+  bottom: 0;
+  
+}
+
+.edit-btn text{
+  color: white;
+  line-height: 80rpx;
+}

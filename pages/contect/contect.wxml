@@ -1,0 +1,29 @@
+<!--pages/contect/contect.wxml-->
+<!--pages/people_list/people_list.wxml-->
+<view class="wrap">
+<view class="wrap-search">
+<input placeholder="请输入名字"></input>
+<image src="/static/search.png" ></image>
+</view>
+  <view class="tip">
+    <text>请按顺序选择：(一次选择不能超过10个)</text>
+  </view>
+  <radio-group bindchange="selected" >
+    <view class="users" wx:for="{{users}}" wx:key="users">
+    
+      <view class="user">
+        <radio value="{{item.myid}}"></radio>
+        <view class="name">
+          <!-- <text id="xh"><text style="color:red" wx:if='{{item.select_xh}}'>{{item.select_xh}}</text></text> -->
+          <text>{{item.name}}</text>
+          <text wx:if="{{item.gender=='1'}}">男</text>
+          <text wx:else>女</text>
+
+        </view>
+      </view>
+
+    </view>
+  </radio-group>
+
+<view class="complete-btn" bindtap="comfirm"><text>确定</text></view>
+</view>

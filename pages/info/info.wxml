@@ -1,0 +1,28 @@
+<!--pages/info/info.wxml-->
+<view class="wrap">
+  <view class="wrap-search">
+    <input placeholder="请输入名字" bindinput="name"></input>
+    <image src="/static/search.png" bindtap="search"></image>
+  </view>
+  <view class="tip">
+    <text>点击可查看详细的人物信息</text>
+  </view>
+
+  <view class="users" wx:for="{{users}}" wx:key="users">
+
+    <view class="user">
+      <view class="name" bindtap="toUserDetail" data-user_id="{{item.myid}}">
+        <text>{{item.name}}</text>
+        <text wx:if="{{item.gender=='1'}}">男</text>
+        <text wx:else>女</text>
+
+      </view>
+    </view>
+
+  </view>
+
+
+  <view class="complete-btn" bindtap="comfirm">
+    <text>确定</text>
+  </view>
+</view>

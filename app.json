@@ -1,0 +1,26 @@
+{
+  "pages":[
+    
+    "pages/index/index",
+    "pages/edit_zupu/edit_zupu",
+    "pages/edit_dai/edit_dai",
+    "pages/login/login",
+    "pages/test/test",
+    "pages/people_list/people_list",
+    "pages/user_card/user_card",
+    "pages/tree/tree",
+    "pages/contect/contect",
+    "pages/info/info"
+
+    
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fafafa",
+    "navigationBarTitleText": "族谱",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

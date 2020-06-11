@@ -1,0 +1,35 @@
+<!--pages/user_card/user_card.wxml-->
+
+<view class="head">
+  <!-- <image src="{{user_info.vatara}}"></image> -->
+  <image src="/static/smile.jpg"></image>
+</view>
+<view class="table">
+  <view class="row-item">
+    <text>姓名</text>
+    <text>{{user_info.name}}</text>
+    <text wx:if='{{user_info.stati==2}}'>已故</text>
+  </view>
+  <view class="row-item">
+    <text>代数</text>
+    <text>{{dai}}</text>
+  </view>
+  <view class="row-item">
+    <text>配偶</text>
+    <text>{{user_info.mate}}</text>
+  </view>
+  <view class="column-item">
+    <text>相关照片</text>
+    <view class="row-img">
+      <image wx:for="{{user_info.imgs}}" src="{{item.url}}"></image>
+    </view>
+  </view>
+
+  <view class="column-item">
+    <text>人物简介</text>
+    <view class="wrap-textarea">
+    <view class="textarea">{{user_info.content}}</view> 
+    </view>
+  </view>
+</view>
+
