@@ -1,0 +1,17 @@
+<!--pages/login/login.wxml-->
+<view>
+  <view class='wrap-form'>
+    <form bindsubmit="formSubmit" catchreset="formReset">
+      <view class='input-border'>
+        <input value="" placeholder='输入账号' class='input-box' placeholder-class="placeholder" name="account"></input>
+      </view>
+      <view class='input-border'>
+        <input value="" password='True' placeholder='请输入密码' class='input-box' placeholder-class="placeholder" name="password"></input>
+      </view>
+      <view class='login-btns'>
+        <button formType="submit">登陆</button>
+        <button formType="bindreset">重置</button>
+      </view>
+    </form>
+  </view>
+</view>

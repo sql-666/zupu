@@ -1,0 +1,21 @@
+<!--pages/tree/tree.wxml-->
+<view class="container">
+
+  <ec-canvas id="mychart-dom-area" canvas-id="mychart-area" ec="{{ ec }}"></ec-canvas>
+  <view class="pager">
+  <view bindtap="pager" data-type="col_up">
+      <text>找哥哥</text>
+    </view>
+    <view bindtap="pager" data-type="col_next">
+      <text>找弟弟</text>
+    </view>
+    <view bindtap="pager" data-type="row_up">
+      <text>找长子</text>
+    </view>
+    <view bindtap="pager" data-type="row_next">
+      <text>找幺子</text>
+    </view>
+    <image src="/static/info.png" class="img" bindtap="info">
+    </image>
+  </view>
+</view>

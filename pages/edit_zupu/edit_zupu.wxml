@@ -1,0 +1,82 @@
+<!--pages/edit_zupu/edit_zupu.wxml-->
+<view>
+  <form catchsubmit="put_zupu_part">
+    <view class="family">
+      <view style="display:flex;padding:10rpx 20rpx;justify-content: space-between">
+      <view style="display:flex;flex-direction:column">
+        <text><text wx:if="{{dai==0}}">始祖</text><text wx:else>第{{dai}}代</text>第{{page}}页</text>
+        <text>请按顺序填写</text>
+      </view>  
+      <view style="display:flex;">
+      <view class="connect"><text>上一页</text></view>
+      <view class="connect"><text>下一页</text></view>
+      </view>
+      </view>
+      <view class="wrap-families" wx:for="{{zupu_part}}" wx:key="zupu_part_key" wx:for-item="zupu_part">
+
+        <view>
+
+          <view class="family-item">
+            <text style="margin-right:10rpx;">{{index+1}}</text>
+            <view class="info">
+              <input value="{{zupu_part.name}}" name="{{zupu_part.myid}}"></input>
+            </view>
+            <view class="del" bindtap="del" data-myid="{{zupu_part.myid}}" data-type="del" wx:if="{{dai != 0}}">
+              <text>删除</text>
+            </view>
+            <view class="connect" bindtap="connect" data-zupu_id="{{zupu_part.myid}}" 
+            style="background-color:{{zupu_part.info? '#8a8a8a' : ''}}">
+               <text wx:if="{{zupu_part.info==''}}">去指定</text>
+              <text wx:else>已指定</text>
+            </view>
+          </view>
+
+          <view class="children" wx:for="{{zupu_part.children}}" wx:key="children_key" wx:for-item="children" class="children-item" wx:for-index="children_index">
+
+            <view class="info">
+              <!-- <image src='{{children.vatara}}'></image> -->
+              <input value="{{children.name}}" name="{{children.myid}}"></input>
+            </view>
+            <view class="del" bindtap="del" data-myid="{{children.myid}}" data-type="del">
+              <text>删除</text>
+             
+            </view>
+            <view class="connect" bindtap="connect" data-zupu_id="{{children.myid}}"
+            style="background-color:{{children.info? '#8a8a8a' : ''}}">
+              <text wx:if="{{children.info==''}}">去指定</text>
+              <text wx:else>已指定</text>
+            </view>
+            
+          </view>
+          <view class="add-child" bindtap="showModal" data-type="child" data-currentBtn="{{zupu_part.myid}}"  data-statu="open" >
+            <text>添加子嗣</text>
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+    <!-- <view class="mbtn" data-statu="open" bindtap="showModal" data-type="father" wx:if="{{dai==1}}" data-operate="new">
+      <text>添加</text>
+    </view> -->
+    <button class="complete-btn" style="width: 100%" formType="submit">
+      <text>完成</text>
+    </button>
+  </form>
+</view>
+
+<!-- 遮罩层 -->
+<view class="drawer_screen" bindtap="showModal" data-statu="close" wx:if="{{showModalStatus}}"></view>
+
+<view class="modal" animation="{{animationData}}" wx:if="{{showModalStatus}}">
+  <view>
+    <text>【姓名】</text>
+  </view>
+  <input placeholder="请输入姓名" placeholder-class='placeholder' name='message' bindinput="name"></input>
+  <view class="modal-btn">
+    <view class="modal-b" bindtap="showModal" data-statu="close">取消</view>
+    <view class="modal-b" style="color: green" bindtap="confirm" data-statu="close" data-type="new">
+      确定
+    </view>
+  </view>
+</view>

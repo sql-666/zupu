@@ -1,0 +1,25 @@
+<!--pages/edit_dai/edit_dai.wxml-->
+<form catchsubmit="complete">
+<view class="wrap">
+  <view class="tip"><text>注意：请先保存再去添加子嗣</text></view>
+  <view class="dai-item">
+    
+    <view class="dai" wx:for="{{dai}}" wx:key="dai">
+      <view class="bt"><text>第{{index+1}}代</text></view>
+      <input value="{{item.name}}" name="{{index}}"></input>
+      <view class="btn_group">
+      <view class="xbtn">删除</view>
+      <view class="xbtn" id="add-child"  bindtap="edit_child" data-id="{{index}}">添加子嗣</view>
+      </view>
+    </view>
+    
+    <view class="mbtn" bindtap="edit_dai">
+    <text>添加</text>
+    </view>
+  </view>
+  <button class="complete-btn" id="button" formType="submit">
+    <text>保存</text>
+  </button>
+
+</view>
+</form>

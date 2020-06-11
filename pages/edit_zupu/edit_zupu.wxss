@@ -1,0 +1,147 @@
+/* pages/edit_zupu/edit_zupu.wxss */
+
+.family-item, .children-item{
+  display: flex;
+  align-items: center;
+  /* border-bottom:0.1rpx solid #ccc; */
+}
+
+.children-item{
+  margin-left: 50rpx;
+}
+
+.wrap-families{
+  padding: 20rpx;
+  border:0.1rpx solid #ccc;
+  margin-bottom: 20rpx;
+}
+
+.info{
+  width: 70%;
+  display: flex;
+  align-items: center;
+}
+
+.info image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+
+
+text{
+  color: #424242
+}
+
+.del, .add-child, .connect{
+  width: 90rpx;
+  height: 45rpx;
+  text-align: center;
+  border: 0.1rpx solid #ccc;
+  font-size: 25rpx;
+  line-height: 45rpx;
+}
+
+.connect{
+  background-color: #2E7D32;
+  color: white;
+  
+}
+
+.connect text{
+  color: white;
+}
+
+.complete-btn{
+  width: 100%;
+  text-align: center;
+  height: 80rpx;
+  background-color: #2E7D32;
+  position: fixed;
+  bottom: 0;
+  padding: 0;
+  
+}
+
+.complete-btn text{
+  color: white;
+  line-height: 80rpx;
+}
+
+.add-child{
+  margin-top: 20rpx;
+  margin-left: 71%;
+  width: 200rpx;
+  background-color: #2E7D32;
+  color: white;
+}
+
+.add-child text{
+  color: white;
+}
+
+.mbtn{
+  margin-left: 75%;
+  background-color: white;
+  color: #424242;
+  border: 0.1rpx solid #ccc;
+}
+
+.mbtn text{
+  color: #424242;
+}
+
+input{
+  width: 70%;
+  height: 65rpx;
+  border: 0.1rpx solid #ccc;
+  border-radius: 10rpx;
+  margin: 20rpx 0;
+  padding: 0 20rpx;
+}
+
+/* 遮罩 */
+.drawer_screen {
+height: 100%;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 100;
+background-color: #000;
+opacity: 0.3;
+overflow: hidden;
+width: 100%;
+}
+
+.modal-btn{
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 10rpx;
+
+}
+.modal-b{
+  flex: 1;
+  text-align: center;
+  border: 0.01rpx solid #ccc;
+  /* border-radius: 20rpx; */
+  
+}
+
+.modal{
+  background-color: white;
+  position: fixed;
+  bottom: 500rpx;
+  width: 80%;
+  left: 10%;
+  height: 230rpx;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  z-index: 101;
+}
+
+
+input{
+  padding: 0 10rpx;
+  margin: 20rpx 0;
+}

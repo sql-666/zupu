@@ -1,0 +1,22 @@
+<!-- 详情 -->
+<view wx:for="{{zupu}}" wx:key="zupu" >
+  <view class='title' catchtap='rotateAnim' data-degs="{{item.degs}}" data-id="{{index}}">
+    <text>{{item.name}}({{item.subords.length}}页)</text>
+    <view style='transform:rotate({{item.degs}}deg);transition:all 0.4s;'></view>
+  </view>
+  <view hidden='{{item.degs==0}}'>
+    <view wx:for="{{item.subords}}" wx:key="item-subords" wx:for-index="ye_num" wx:for-item="subords">
+      <view class="ye-item" bindtap="toDraw" data-id="{{subords.myid}}">
+        <view class="des">
+          <text>第{{ye_num+1}}页</text>
+          <text>{{subords.name}}</text>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="edit-btn" bindtap="edit_zupu" wx:if="{{flag}}">
+<text>编辑族谱</text>
+</view>
